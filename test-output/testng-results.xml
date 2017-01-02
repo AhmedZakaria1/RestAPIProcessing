@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="3382" started-at="2016-12-20T16:19:49Z" finished-at="2016-12-20T16:19:53Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="3382" started-at="2016-12-20T16:19:49Z" finished-at="2016-12-20T16:19:53Z">
+      <class name="rest.NewTest">
+        <test-method status="PASS" signature="testOutput()[pri:0, instance:rest.NewTest@5fe5c6f]" name="testOutput" duration-ms="3366" started-at="2016-12-20T21:49:49Z" finished-at="2016-12-20T21:49:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOutput -->
+      </class> <!-- rest.NewTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
