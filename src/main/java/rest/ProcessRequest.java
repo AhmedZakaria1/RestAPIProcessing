@@ -8,19 +8,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ProcessRequest extends RestRequest{
+	String url;
+	String requestType;
+	String outputFormat;
+	ProcessRequest(String url,String requestType,String outputFormat){
+		this.url=url;
+		this.requestType=requestType;
+		this.outputFormat=outputFormat;
+	}
 	HashMap<String,String> dataSet=new HashMap<String,String>();
-public void processRestApi(String url,String requestType,String outputFormat){	
-	ProcessRequest sub=new ProcessRequest();
-sub.con(url);
-sub.setRequestType(requestType);
-sub.setOutPutMimeType(outputFormat);
-
+public void processRestApi(){	
+con(url);
+setRequestType(requestType);
+setOutPutMimeType(outputFormat);
 	StringBuffer sb=new StringBuffer();
 	String test;
 	String[] tkn;
 	
 	try {
-		InputStream ins=sub.conn.getInputStream();
+		InputStream ins=conn.getInputStream();
 	InputStreamReader isr=new InputStreamReader(ins);
 	BufferedReader br=new BufferedReader(isr);
 	
@@ -62,6 +68,9 @@ sub.setOutPutMimeType(outputFormat);
 		
 	}
 
-	
+	public static void main (String[] args){
+		ProcessRequest sample=new ProcessRequest("https://jsonplaceholder.typicode.com/posts", "GET", "json");
+		sample.processRestApi();
+	}
 	
 }
