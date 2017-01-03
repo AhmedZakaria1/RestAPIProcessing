@@ -5,13 +5,13 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class HttpConn {
-	HttpURLConnection conn=null;
-	public HttpURLConnection con(String apiUrl){
+public class HttpConnection {
+	HttpURLConnection httpConnection=null;
+	protected void setHttpconnection(String apiUrl){
 		try {
 			System.setProperty("http.agent", "Chrome");
-			conn=(HttpURLConnection)new URL(apiUrl).openConnection();
-			return conn;
+			this.httpConnection=(HttpURLConnection)new URL(apiUrl).openConnection();
+		
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -19,7 +19,6 @@ public class HttpConn {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
-	return null;
+
 }
 }
